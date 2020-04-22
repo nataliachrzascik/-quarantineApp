@@ -1,0 +1,31 @@
+.position {
+  width: 100%;
+  height: 30vh;
+  border-bottom: 1px solid grey;
+}
+.left {
+  display: inline-block;
+  float: left;
+  width: 30%;
+  height: 100%;
+}
+.image1 {
+  background-image: url(../../src/images/ticket.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image2 {
+  background-image: url(../../src/images/books.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image3 {
+  background-image: url(../../src/images/good.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.right {
+  display: inline-block;
+  width: 70%;
+  height: 100%;
+}
