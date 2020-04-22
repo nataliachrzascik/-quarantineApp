@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 export class Book extends Component {
+    state = {
+
+    }
     render() {
         return (
             <div className="container">

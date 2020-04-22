@@ -1,37 +1,54 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { NavLink } from "react-router-dom";
 
 export class Movie extends Component {
+    state = {
+    }
+
     render() {
+        const { movie } = this.props;
         return (
-            <div className="container">
-                <h3>Movie</h3>
+            < div className="container" >
+                <h3>Film</h3>
                 <div className="row">
                     <div className="col-md-4 card card-body">
-                        <img className="thumbnail" alt="Poster" />
+                        <img src={movie.Poster} className="thumbnail" alt="Poster" />
                     </div>
                     <div className="col-md-8">
-                        <h2 className="mb-4">Title</h2>
+                        <h2 className="mb-4">{movie.Title}</h2>
                         <ul className="list-group">
                             <li className="list-group-item">
-                                <strong>Genre:</strong> Genre
+                                <strong>Gatunek: </strong>{movie.Genre}
                             </li>
                             <li className="list-group-item">
-                                <strong>Released:</strong> Released
+                                <strong>Wydany: </strong>{movie.Released}
                             </li>
                             <li className="list-group-item">
-                                <strong>Rated:</strong> Rated
+                                <strong>Kraj Produkcji: </strong>{movie.Country}
                             </li>
                             <li className="list-group-item">
-                                <strong>IMDB Rating:</strong> IMDB Ranking
+                                <strong>Czas Trwania: </strong>{movie.Runtime}
                             </li>
                             <li className="list-group-item">
-                                <strong>Director:</strong> Dicertor
+                                <strong>Nagrody: </strong>{movie.Awards ? movie.Awards : "none"}
                             </li>
                             <li className="list-group-item">
-                                <strong>Writer:</strong> Writer
+                                <strong>Oceny: </strong>
+                                {movie.Ratings.map(rating => {
+                                    return (
+                                        `${rating.Source} : ${rating.Value} `
+                                    )
+                                })}
                             </li>
                             <li className="list-group-item">
-                                <strong>Actors:</strong> Actors
+                                <strong>Reżyser: </strong>{movie.Director}
+                            </li>
+                            <li className="list-group-item">
+                                <strong>Scenarzysta: </strong>{movie.Writer}
+                            </li>
+                            <li className="list-group-item">
+                                <strong>Aktorzy: </strong>{movie.Actors}
                             </li>
                         </ul>
                     </div>
@@ -39,27 +56,21 @@ export class Movie extends Component {
                 <div className="row">
                     <div className="card card-body bg-dark my-5 text-light">
                         <div className="col-md-12">
-                            <h3>About </h3>
-                            Plot
+                            <h3>Wątki </h3>
+                            {movie.Plot}
                             <hr />
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary"
-                            >
-                                View on IMDB
-              </a>
-                            <i to="/" className="btn btn-default text-light">
-                                Go Back To Search
-              </i>
+                            <NavLink to="/loginSuccess"><i to="/" className="btn btn-default text-light">Wróć do panelu użytkownika</i></NavLink>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         )
     }
 }
 
-export default Movie
+const mapStateToProps = state => ({
+    movie: state.movie.movie
+});
+
+export default connect(mapStateToProps)(Movie);
 

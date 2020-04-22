@@ -3,6 +3,10 @@ import { LOGOUT } from '../actions/types';
 
 const initialState = {
     name: '',
+    tasksDone: [],
+    movies: [],
+    good: [],
+    books: [],
     login: false,
     heart: undefined,
     brain: undefined,

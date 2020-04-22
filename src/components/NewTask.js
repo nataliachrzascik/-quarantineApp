@@ -5,7 +5,23 @@ import good from "../images/good.jpg";
 import ticket from "../images/ticket.jpg";
 import { NavLink } from "react-router-dom";
 
+import { searchMovie } from "../actions/searchActions";
+import movies from "../../src/items/movies.json";
+import { connect } from 'react-redux';
+
 export class NewTask extends Component {
+    state = {}
+    randomNumber() {
+        let number = Math.floor(Math.random() * 90) + 1;
+        number += "";
+        const chooseMovie = movies.filter(movie => {
+            return (movie.position === number)
+        })
+        return chooseMovie[0].ID;
+    }
+    componentDidMount() {
+        this.props.searchMovie(this.randomNumber());
+    }
     render() {
         return (
 
@@ -57,4 +73,11 @@ export class NewTask extends Component {
     }
 }
 
-export default NewTask
+const mapStateToProps = state => ({
+    movie: state.movie.movie
+});
+
+export default connect(
+    mapStateToProps,
+    { searchMovie }
+)(NewTask);
