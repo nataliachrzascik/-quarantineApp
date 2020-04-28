@@ -47,7 +47,7 @@ export class Login extends Component {
                 <div className="gradientBackground p-5 radius col-md-6 m-auto">
                     <form onSubmit={this.LogMe}>
                         <div className="form-group m-2 p-4">
-                            <label className="h3 userName" htmlFor="inputNick">TWOJA NOWA NAZWA UŻYTKOWNIKA</label>
+                            <label className="h3 userName" htmlFor="inputNick">TWOJA NAZWA UŻYTKOWNIKA</label>
                             <input type="text" onChange={this.onChange} className="form-control" id="inputNick" placeholder="Wprowadź nick">
                             </input>
                         </div>
@@ -61,8 +61,7 @@ export class Login extends Component {
 
 
 const mapStateToProps = state => (
-    console.log("Login.js "),
-    console.log(state), {
+    {
         name: state.name.name,
         login: state.name.login
     }

@@ -2,8 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { NavLink } from "react-router-dom";
 
+import { addMovie } from "../../actions/addNewTask";
+
+
 export class Movie extends Component {
     state = {
+    }
+    componentDidMount() {
+        this.props.addMovie(this.props.movie)
     }
 
     render() {
@@ -72,5 +78,5 @@ const mapStateToProps = state => ({
     movie: state.movie.movie
 });
 
-export default connect(mapStateToProps)(Movie);
+export default connect(mapStateToProps, { addMovie })(Movie);
 

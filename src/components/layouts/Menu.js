@@ -45,8 +45,6 @@ export class Menu extends Component {
 }
 
 const mapStateToProps = state => (
-    console.log("Menu.js "),
-    console.log(state),
     {
         name: state.name.name,
         login: state.name.login,

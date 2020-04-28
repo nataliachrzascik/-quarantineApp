@@ -1,11 +1,14 @@
-import { LOGIN } from '../actions/types';
-import { LOGOUT } from '../actions/types';
+import { LOGIN, LOGOUT } from '../actions/types';
+import { ADD_MOVIE, ADD_BOOK, ADD_GOOD, ADD_TO_DONE } from '../actions/types';
+import React from 'react-dom';
+import { act } from 'react-dom/test-utils';
+
 
 const initialState = {
     name: '',
     tasksDone: [],
     movies: [],
-    good: [],
+    goods: [],
     books: [],
     login: false,
     heart: undefined,
@@ -13,13 +16,8 @@ const initialState = {
     happy: undefined
 };
 
-//fukcja sprawdzajca typ akcji i w zaleznosci od niej wywolująca akcje
-
 export default function (state = initialState, action) {
     switch (action.type) {
-        //tu dostanie reducer z searchActions obiekt type i payload
-        //sprawdzi sobie czy type = SEARCH_MOVIE jesli tak to do textu wrzuci pozyskany text z searchActions
-
         case LOGIN:
             return {
                 ...state,
@@ -38,6 +36,28 @@ export default function (state = initialState, action) {
                 brain: "-",
                 happy: "-"
             };
+        case ADD_MOVIE:
+            return {
+                ...state,
+                movies: [...state.movies, action.payload]
+
+            };
+        case ADD_BOOK:
+            return {
+                ...state,
+                books: [...state.books, action.payload]
+            };
+        case ADD_GOOD:
+            return {
+                ...state,
+                goods: [...state.goods, action.payload]
+            };
+        case ADD_TO_DONE:
+            return {
+                ...state,
+                tasksDone: [...state.tasksDone, action.payload]
+            };
+
 
         default:
             return state;
