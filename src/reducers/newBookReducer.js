@@ -15,6 +15,7 @@ export default function (state = initialState, action) {
                 book: action.payload
             };
 
+
         default:
             return state;
     }

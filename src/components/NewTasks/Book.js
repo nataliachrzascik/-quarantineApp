@@ -15,6 +15,7 @@ export class Book extends Component {
         const { book } = this.props
         return (
             <div className="container">
+                {console.log(book)}
                 <h3>Książka</h3>
                 <div className="row">
                     <div className="col-md-2 card card-body">

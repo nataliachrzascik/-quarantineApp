@@ -9,11 +9,6 @@ export class TaskToDo extends Component {
         let keyMovie = 0;
         let keyBook = 100;
         let keyGood = 200;
-        //dokonczyc dla innych tak jak dla movie
-        //tylko nie mutując stanu (trzeba zrobic usuwającą akcje po kliknieciu V lub X która
-        // zaktualizuje tez globalny stan z movies,goods,books musi byc usuwany stan tego tytułu kliknietego)
-        // 2.no i przy przerzucaniu np. z movies mozna tylko 5 zadan pobrac potem blokuje sie przycisk,
-        //musi sie usuwac przy zrobieniu lub odrzuceniu zadania nawet z state movies
         return (
             <div id="container">
                 <div className="position">
@@ -22,7 +17,7 @@ export class TaskToDo extends Component {
                         {movies.map(item => {
                             keyMovie++
                             return (
-                                < Task item={item.Title} text={"Do obejrzenia: "} key={item.Title} id={keyMovie} />
+                                < Task object={item} item={item.Title} text={"Do obejrzenia: "} key={item.Title + keyMovie} id={keyMovie} category={"movie"} />
                             )
 
                         }
@@ -32,17 +27,23 @@ export class TaskToDo extends Component {
                 <div className="position">
                     <div className="left image2"></div>
                     <div className="right">
-                        {books.map(item => (
-                            <Task item={item.title} text={"Do przeczytania: "} key={item.title} />
-                        ))}
+                        {books.map(item => {
+                            keyBook++
+                            return (
+                                <Task object={item} item={item.title} text={"Do przeczytania: "} key={item.title + keyBook} id={keyBook} category={"book"} />
+                            )
+                        })}
                     </div>
                 </div>
                 <div className="position">
                     <div className="left image3"></div>
                     <div className="right">
-                        {goods.map(item => (
-                            <Task item={item} text={"Do zrobienia: "} key={item} />
-                        ))}
+                        {goods.map(item => {
+                            keyGood++
+                            return (
+                                <Task object={item} item={item} text={"Do zrobienia: "} key={item + keyGood} id={keyGood} category={"good"} />
+                            )
+                        })}
                     </div>
                 </div>
             </div>
