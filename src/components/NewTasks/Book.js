@@ -18,7 +18,7 @@ export class Book extends Component {
                 {console.log(book)}
                 <h3>Książka</h3>
                 <div className="row">
-                    <div className="col-md-2 card card-body">
+                    <div className="col-md-2 col-sm-7 card card-body">
                         <img src={book.volumeInfo.imageLinks.thumbnail} className="thumbnail" alt="Poster" />
                     </div>
                     <div className="col-md-8">

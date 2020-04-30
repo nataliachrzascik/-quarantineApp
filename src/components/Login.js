@@ -25,21 +25,33 @@ export class Login extends Component {
     }
     LogMe = (e) => {
         e.preventDefault();
-        //czy w bazie jest taki login? jesli tak to pobierz jego dane
-        //jesli w bazie nie ma takiego loginu to:
+        //" ",
+        const logOk = () => {
+            //czy w bazie jest taki login? jesli tak to pobierz go dane
+            //jesli w bazie nie ma takiego loginu to:
 
-        this.setState({
-            user: {
-                name: "",
-                login: false,
-                heart: 0,
-                brain: 0,
-                happy: 0
-            }
-        })
-        this.props.login(this.state.tempName);
-        //przekazanie tekstu z iputa do akcji sprawdzajacej
-        this.props.history.push('/loginSuccess');
+            this.setState({
+                user: {
+                    name: "",
+                    login: false,
+                    heart: 0,
+                    brain: 0,
+                    happy: 0
+                }
+            })
+            this.props.login(this.state.tempName);
+            this.props.history.push('/loginSuccess');
+        }
+
+        if (this.state.tempName === undefined || null) {
+            return alert("Nazwa nie moze byc pusta");
+        }
+        else {
+            const reg = new RegExp("[a-zA-Z_0-9]+");
+            //czy w bazie jest taki login? jesli tak to pobierz go dane
+            //jesli w bazie nie ma takiego loginu to wykonaj logOK
+            reg.test(this.state.tempName) ? logOk() : alert("Nazwa musi składać się z liter, cyfr lub znaku _")
+        }
     }
     render() {
         return (

@@ -6,10 +6,10 @@ export class TaskDone extends Component {
 
         return (
             <div id="containerMain">
-                <div className="col">
+                <div className="col ">
                     <h5>Zrobione zadania (ostatnie 5)</h5>
                     {this.props.tasks.slice(Math.max(this.props.tasks.length - 5, 0)).map((task) => (
-                        <p>{task}</p>
+                        <p className="col-md-8 mx-auto">{task}</p>
                     ))}
                 </div>
             </div>

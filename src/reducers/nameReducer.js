@@ -1,5 +1,5 @@
 import { LOGIN, LOGOUT } from '../actions/types';
-import { ADD_MOVIE, ADD_BOOK, ADD_GOOD, ADD_TO_DONE, DELETE_FROM_MGB, ADD_POINT_BOOK, ADD_POINT_GOOD, ADD_POINT_MOVIE } from '../actions/types';
+import { ADD_MOVIE, ADD_BOOK, ADD_GOOD, ADD_TO_DONE, DELETE_FROM_MGB, ADD_POINT_BOOK, ADD_POINT_GOOD, ADD_POINT_MOVIE, ANIMATE_ICON_HEART, ANIMATE_ICON_BRAIN, ANIMATE_ICON_SMILE } from '../actions/types';
 import React from 'react-dom';
 import { act } from 'react-dom/test-utils';
 
@@ -13,7 +13,11 @@ const initialState = {
     login: false,
     heart: undefined,
     brain: undefined,
-    happy: undefined
+    happy: undefined,
+
+    changeIconBrain: false,
+    changeIconHeart: false,
+    changeIconSmile: false
 };
 
 export default function (state = initialState, action) {
@@ -67,18 +71,39 @@ export default function (state = initialState, action) {
         case ADD_POINT_MOVIE:
             return {
                 ...state,
-                happy: state.happy + 1
+                happy: state.happy + 1,
+
+                changeIconSmile: true
 
             };
         case ADD_POINT_BOOK:
             return {
                 ...state,
-                brain: state.brain + 1
+                brain: state.brain + 1,
+
+                changeIconBrain: true
             };
         case ADD_POINT_GOOD:
             return {
                 ...state,
-                heart: state.heart + 1
+                heart: state.heart + 1,
+
+                changeIconHeart: true
+            };
+        case ANIMATE_ICON_HEART:
+            return {
+                ...state,
+                changeIconHeart: false
+            };
+        case ANIMATE_ICON_BRAIN:
+            return {
+                ...state,
+                changeIconBrain: false
+            };
+        case ANIMATE_ICON_SMILE:
+            return {
+                ...state,
+                changeIconSmile: false
             };
 
         default:

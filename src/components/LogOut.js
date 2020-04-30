@@ -6,7 +6,6 @@ class LogOut extends React.Component {
     render() {
         const logOut = () => {
             this.props.logout(undefined);
-            //przekazanie tekstu z iputa do akcji sprawdzajacej
         }
         logOut();
 

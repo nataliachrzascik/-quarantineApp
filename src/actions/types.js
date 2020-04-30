@@ -22,3 +22,8 @@ export const DELETE_FROM_MGB = "DELETE_FROM_MGB";
 export const ADD_POINT_MOVIE = "ADD_POINT_MOVIE";
 export const ADD_POINT_BOOK = "ADD_POINT_BOOK";
 export const ADD_POINT_GOOD = "ADD_POINT_GOOD";
+
+//animacja ikon
+export const ANIMATE_ICON_HEART = "ANIMATE_ICON_HEART";
+export const ANIMATE_ICON_BRAIN = "ANIMATE_ICON_BRAIN";
+export const ANIMATE_ICON_SMILE = "ANIMATE_ICON_SMILE";

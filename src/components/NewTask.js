@@ -52,26 +52,20 @@ export class NewTask extends Component {
         return (
 
             <div id="containerMain">
-                <div className="col-md-3 mb-5 d-inline-block">
+                <div className="col-md-3 col-sm-4 mb-5 d-inline-block">
                     <h2>Książka</h2>
                     <div className="card card-body bg-light text-center h-100 ">
-                        <img style={{ height: "30vh" }} className="w-30 mb-2" src={book} />
-                        <h5 className="text-light card-title">
-
-                        </h5>
+                        <img className="w-30 mb-2 image" src={book} />
                         {this.props.books.length < 5 ? <NavLink to="/newBook"><i className="btn gradientBackground" >
                             Losuj książke
                         </i></NavLink> : <i className="btn gradientBackground" >Max ilość wylosowanych książek</i>}
                     </div>
                 </div>
 
-                <div className="col-md-3 mb-5 d-inline-block">
+                <div className="col-md-3 col-sm-4 mb-5 d-inline-block">
                     <h2>Dobry uczynek</h2>
                     <div className="card card-body bg-light text-center h-100 ">
-                        <img style={{ height: "30vh" }} className="w-30 mb-2" src={good} />
-                        <h5 className="text-light card-title">
-
-                        </h5>
+                        <img className="w-30 mb-2 image" src={good} />
                         {this.props.goods.length < 5 ? <NavLink to="/newGoodTask"><i className="btn gradientBackground" >
                             Losuj zadanie
                         </i></NavLink> : <i className="btn gradientBackground" >Max ilość wylosowanych uczynków</i>}
@@ -79,13 +73,10 @@ export class NewTask extends Component {
                     </div>
                 </div>
 
-                <div className="col-md-3 mb-5 d-inline-block">
+                <div className="col-md-3 col-sm-4 mb-5 d-inline-block">
                     <h2>Film</h2>
                     <div className="card card-body bg-light text-center h-100">
-                        <img style={{ height: "30vh" }} className="w-30 mb-2" src={ticket} />
-                        <h5 className="text-light card-title">
-
-                        </h5>
+                        <img className="w-30 mb-2 image" src={ticket} />
                         {this.props.movies.length < 5 ? <NavLink to="/newMovie"><i className="btn gradientBackground" >
                             Losuj Film
                         </i></NavLink> : <i className="btn gradientBackground" >Max ilość wylosowanych filmów</i>}
