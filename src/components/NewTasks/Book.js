@@ -48,7 +48,7 @@ export class Book extends Component {
                             <h3>Opis</h3>
                             {book.volumeInfo.description}
                             <hr />
-                            <NavLink to="/loginSuccess"><i to="/" className="btn btn-default text-light">Wróć do panelu użytkownika</i></NavLink>
+                            <NavLink to="/newTask"><i to="/" className="btn btn-default text-light">Wróć do panelu użytkownika</i></NavLink>
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,26 @@ import { login } from '../actions/loginAction';
 import { connect } from 'react-redux';
 import { NavLink } from "react-router-dom";
 
+import { withStyles } from '@material-ui/core/styles';
+import { Button, TextField } from "@material-ui/core";
+
+const StyledButton = withStyles({
+    root: {
+        borderRadius: 3,
+        border: 0,
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
+        marginRight: '5%',
+        boxShadow: '0 1px 3px 2px rgba(195, 192, 192, .1)',
+        backgroundColor: "#515151"
+    },
+    label: {
+        textTransform: 'capitalize',
+    },
+
+})(Button);
+
 export class Login extends Component {
     state = {
         tempName: undefined,
@@ -56,14 +76,13 @@ export class Login extends Component {
     render() {
         return (
             <div id="containerMain">
-                <div className="gradientBackground p-5 radius col-md-6 m-auto">
+                <div className="background p-5 radius col-md-6 m-auto">
+                    <p className="userName">TWOJA NAZWA UZYTKOWNIKA</p>
                     <form onSubmit={this.LogMe}>
                         <div className="form-group m-2 p-4">
-                            <label className="h3 userName" htmlFor="inputNick">TWOJA NAZWA UŻYTKOWNIKA</label>
-                            <input type="text" onChange={this.onChange} className="form-control" id="inputNick" placeholder="Wprowadź nick">
-                            </input>
+                            <TextField style={{ height: '100%' }} label="Nick" variant="outlined" onChange={this.onChange} className="form-control" id="inputNick" ></TextField>
                         </div>
-                        <button type="submit" className="btn btn-dark" >Zaloguj</button>
+                        <StyledButton type="sumbit">Zaloguj</StyledButton>
                     </form>
                 </div>
             </div>

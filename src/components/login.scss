@@ -1,7 +1,14 @@
 .userName {
-  color: #2c2c2e;
+  color: white;
+  text-transform: to-upper-case;
+  font-size: 2em;
   margin-bottom: 5%;
+  font-family: "Permanent Marker", cursive;
 }
 .radius {
   border-radius: 20px;
+}
+.background {
+  background-color: #292828;
+  padding: 1%;
 }

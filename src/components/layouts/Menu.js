@@ -36,7 +36,7 @@ export class Menu extends Component {
                     <div className="container">
 
                         <div className="navbar-header col-md-2 col-sm-3">
-                            <NavLink to={login ? "/loginSuccess" : "/"}><i className="navbar-brand text-white text-lg brand-text" >Strona Główna</i></NavLink>
+                            <i className="navbar-brand text-white text-lg brand-text" >Kwarantannowa Apka</i>
                         </div>
 
                         <ul className="navbar-nav ml-auto text-light d-inline-block col-md-8 col-sm-8">

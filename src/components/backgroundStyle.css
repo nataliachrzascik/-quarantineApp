@@ -1,0 +1,6 @@
+.back {
+  height: 90vh;
+  background-image: url(../images/star.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
