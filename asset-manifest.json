@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/-quarantineApp/static/css/main.a4a547cf.chunk.css",
+    "main.js": "/-quarantineApp/static/js/main.f14dc1d4.chunk.js",
+    "main.js.map": "/-quarantineApp/static/js/main.f14dc1d4.chunk.js.map",
+    "runtime-main.js": "/-quarantineApp/static/js/runtime-main.56069b50.js",
+    "runtime-main.js.map": "/-quarantineApp/static/js/runtime-main.56069b50.js.map",
+    "static/js/2.11b07fd0.chunk.js": "/-quarantineApp/static/js/2.11b07fd0.chunk.js",
+    "static/js/2.11b07fd0.chunk.js.map": "/-quarantineApp/static/js/2.11b07fd0.chunk.js.map",
+    "index.html": "/-quarantineApp/index.html",
+    "precache-manifest.d2b1d084a6fa72256278aa828eb853a4.js": "/-quarantineApp/precache-manifest.d2b1d084a6fa72256278aa828eb853a4.js",
+    "service-worker.js": "/-quarantineApp/service-worker.js",
+    "static/css/main.a4a547cf.chunk.css.map": "/-quarantineApp/static/css/main.a4a547cf.chunk.css.map",
+    "static/js/2.11b07fd0.chunk.js.LICENSE.txt": "/-quarantineApp/static/js/2.11b07fd0.chunk.js.LICENSE.txt",
+    "static/media/1.jpg": "/-quarantineApp/static/media/1.b9d9b1ed.jpg",
+    "static/media/tasksToDo.scss": "/-quarantineApp/static/media/ticket.e769a1f0.jpg",
+    "static/media/backgroundStyle.css": "/-quarantineApp/static/media/star.608b8372.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.56069b50.js",
+    "static/js/2.11b07fd0.chunk.js",
+    "static/css/main.a4a547cf.chunk.css",
+    "static/js/main.f14dc1d4.chunk.js"
+  ]
+}
