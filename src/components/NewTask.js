@@ -11,6 +11,26 @@ import books from "../../src/items/books.json";
 import goods from "../../src/items/goods.json";
 import { connect } from 'react-redux';
 
+import { withStyles } from '@material-ui/core/styles';
+import { Button } from "@material-ui/core"
+
+const StyledButton = withStyles({
+    root: {
+        borderRadius: 3,
+        border: 0,
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
+        marginRight: '5%',
+        boxShadow: '0 1px 3px 2px rgba(195, 192, 192, .1)',
+        backgroundColor: "#515151"
+    },
+    label: {
+        textTransform: 'capitalize',
+    },
+
+})(Button);
+
 export class NewTask extends Component {
     state = {}
     randomNumber() {
@@ -54,32 +74,32 @@ export class NewTask extends Component {
             <div id="containerMain">
                 <div className="col-md-3 col-sm-4 mb-5 d-inline-block">
                     <h2>Książka</h2>
-                    <div className="card card-body bg-light text-center h-100 ">
+                    <div className="card card-body bg-dark text-center h-100 ">
                         <img className="w-30 mb-2 image" src={book} />
-                        {this.props.books.length < 5 ? <NavLink to="/newBook"><i className="btn gradientBackground" >
-                            Losuj książke
-                        </i></NavLink> : <i className="btn gradientBackground" >Max ilość wylosowanych książek</i>}
+                        {this.props.books.length < 5 ? <NavLink to="/newBook">
+                            <StyledButton>
+                                Losuj książke</StyledButton></NavLink> : <i className="btn gradientBackground" >Max ilość wylosowanych książek</i>}
                     </div>
                 </div>
 
                 <div className="col-md-3 col-sm-4 mb-5 d-inline-block">
                     <h2>Dobry uczynek</h2>
-                    <div className="card card-body bg-light text-center h-100 ">
+                    <div className="card card-body bg-dark text-center h-100 ">
                         <img className="w-30 mb-2 image" src={good} />
-                        {this.props.goods.length < 5 ? <NavLink to="/newGoodTask"><i className="btn gradientBackground" >
+                        {this.props.goods.length < 5 ? <NavLink to="/newGoodTask"><StyledButton>
                             Losuj zadanie
-                        </i></NavLink> : <i className="btn gradientBackground" >Max ilość wylosowanych uczynków</i>}
+                        </StyledButton></NavLink> : <i className="btn gradientBackground" >Max ilość wylosowanych uczynków</i>}
 
                     </div>
                 </div>
 
                 <div className="col-md-3 col-sm-4 mb-5 d-inline-block">
                     <h2>Film</h2>
-                    <div className="card card-body bg-light text-center h-100">
+                    <div className="card card-body bg-dark text-center h-100">
                         <img className="w-30 mb-2 image" src={ticket} />
-                        {this.props.movies.length < 5 ? <NavLink to="/newMovie"><i className="btn gradientBackground" >
+                        {this.props.movies.length < 5 ? <NavLink to="/newMovie"><StyledButton>
                             Losuj Film
-                        </i></NavLink> : <i className="btn gradientBackground" >Max ilość wylosowanych filmów</i>}
+                        </StyledButton></NavLink> : <i className="btn gradientBackground" >Max ilość wylosowanych filmów</i>}
                     </div>
                 </div>
             </div>

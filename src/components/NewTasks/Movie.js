@@ -65,7 +65,7 @@ export class Movie extends Component {
                             <h3>Wątki </h3>
                             {movie.Plot}
                             <hr />
-                            <NavLink to="/loginSuccess"><i to="/" className="btn btn-default text-light">Wróć do panelu użytkownika</i></NavLink>
+                            <NavLink to="/newTask"><i to="/" className="btn btn-default text-light">Wróć do panelu użytkownika</i></NavLink>
                         </div>
                     </div>
                 </div>

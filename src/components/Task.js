@@ -13,7 +13,7 @@ export class Task extends Component {
         this.props.deleteTask(this.props.item);
         this.props.category === "movie" ? this.props.addPointMovie() :
             (this.props.category === "book" ? this.props.addPointBook() :
-                (this.props.category === "good" ? this.props.addPointGood() : console.log("nothing")
+                (this.props.category === "good" ? this.props.addPointGood() : console.log("fatal error")
                 ))
     }
     clickedNo = () => {

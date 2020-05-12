@@ -31,7 +31,7 @@ export class Good extends Component {
                     <div className="card card-body bg-dark my-5 text-light">
                         <div className="col-md-12">
                             <hr />
-                            <NavLink to="/loginSuccess"><i to="/" className="btn btn-default text-light">Wróć do panelu użytkownika</i></NavLink>
+                            <NavLink to="/newTask"><i to="/" className="btn btn-default text-light">Wróć do panelu użytkownika</i></NavLink>
                         </div>
                     </div>
                 </div>
